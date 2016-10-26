@@ -1,0 +1,105 @@
+doctype html
+html(lang='pt')
+    include includes/_head
+    body
+        #timeline
+            #logo
+                img(src="design/pug-logo.svg")
+
+            #title PUG timeline example
+
+            mixin timeLineGroup(text)
+                li.time-line-group= text
+
+            - var position = ['left', 'center', 'right']
+            - function getRandom(arr) { var idx; while ((idx = Math.floor(Math.random() * arr.length)) === getRandom.last); return arr[getRandom.last = idx]; }
+            mixin timeLineItem(type, positionSet, text)
+                if !positionSet
+                    - positionSet = getRandom(position)
+
+                li(class= positionSet + "-item")
+                    span.extra-content
+                        span.type-text= type
+                        span.type
+                            case type
+                                when "Product"
+                                    i.fa.fa-gift
+                                when "Suport"
+                                    i.fa.fa-life-ring
+                                when "Event"
+                                    i.fa.fa-graduation-cap
+                                default
+                                    i.fa.fa-child
+                    span.info-content.info-content--hidden= text
+
+            ul
+                +timeLineGroup('Group')
+                +timeLineItem('Product', '', 'Content')
+                +timeLineItem('Suport', '', 'Content')
+                +timeLineGroup('Group')
+                +timeLineItem('Product', '', 'Content')
+                +timeLineItem('', '', 'Content')
+                +timeLineItem('Suport', '', 'Content')
+                +timeLineItem('Event', '', 'Content')
+                +timeLineGroup('Group')
+                +timeLineItem('Product', '', 'Content')
+                +timeLineItem('Product', '', 'Content')
+                +timeLineItem('Product', '', 'Content')
+                +timeLineItem('Product', '', 'Content')
+                +timeLineItem('', '', 'Content')
+                +timeLineItem('Event', '', 'Content')
+                +timeLineItem('Suport', '', 'Content')
+                +timeLineGroup('Group')
+                +timeLineItem('Product', '', 'Content')
+                +timeLineItem('Product', '', 'Content')
+                +timeLineItem('Suport', '', 'Content')
+                +timeLineItem('Product', '', 'Content')
+                +timeLineItem('', '', 'Content')
+                +timeLineGroup('Group')
+                +timeLineItem('Product', '', 'Content')
+                +timeLineItem('Product', '', 'Content')
+                +timeLineItem('Product', '', 'Content')
+                +timeLineItem('', '', 'Content')
+                +timeLineItem('Event', '', 'Content')
+                +timeLineItem('Event', '', 'Content')
+                +timeLineItem('Suport', '', 'Content')
+                +timeLineItem('Suport', '', 'Content')
+                +timeLineGroup('Group')
+                +timeLineItem('Product', '', 'Content')
+                +timeLineItem('Product', '', 'Content')
+                +timeLineItem('Product', '', 'Content')
+                +timeLineItem('Product', '', 'Content')
+                +timeLineItem('Product', '', 'Content')
+                +timeLineItem('', '', 'Content')
+                +timeLineItem('', '', 'Content')
+                +timeLineItem('', '', 'Content')
+                +timeLineItem('Event', '', 'Content')
+                +timeLineGroup('Group')
+                +timeLineItem('Product', '', 'Content')
+                +timeLineItem('Product', '', 'Content')
+                +timeLineItem('Product', '', 'Content')
+                +timeLineItem('Suport', '', 'Content')
+                +timeLineItem('Suport', '', 'Content')
+                +timeLineItem('Event', '', 'Content')
+                +timeLineItem('', '', 'Content')
+                +timeLineItem('', '', 'Content')
+                +timeLineGroup('Group')
+                +timeLineItem('Product', '', 'Content')
+                +timeLineItem('Product', '', 'Content')
+                +timeLineItem('Product', '', 'Content')
+                +timeLineItem('Product', '', 'Content')
+                +timeLineItem('', '', 'Content')
+                +timeLineItem('Suport', '', 'Content')
+                +timeLineItem('Event', '', 'Content')
+                +timeLineItem('Suport', '', 'Content')
+                +timeLineItem('Event', '', 'Content')
+                +timeLineGroup('Group')
+                +timeLineItem('Event', '', 'Content')
+                +timeLineItem('Product', '', 'Content')
+                +timeLineItem('Product', '', 'Content')
+                +timeLineItem('Event', '', 'Content')
+                +timeLineItem('', '', 'Content')
+                +timeLineItem('Event', '', 'Content')
+                +timeLineItem('Product', '', 'Content')
+                +timeLineGroup('Group')
+                +timeLineItem('Product', '', 'Content')

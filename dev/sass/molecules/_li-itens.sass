@@ -1,0 +1,140 @@
+=molecule-li-center-item
+    position: relative
+    margin-top: $pixel-proportion * 5
+    +flex(column, center, center)
+
+    &::before
+        top: -26px
+        box-shadow: 3px 3px 3px transparentize($color2, .7)
+
+    &::after
+        top: $pixel-proportion * -1 + 3
+        left: calc(50% - #{$pixel-proportion})
+        border-top: 8px solid rgba(255,0,0,0)
+        border-right: 8px solid rgba(255,0,0,0)
+        border-bottom: 8px solid $color5
+        border-left: 8px solid rgba(255,0,0,0)
+
+    > .extra-content
+        left: 0
+        position: absolute
+        z-index: 9
+        top: -33px
+        width: 100%
+        +flex(row, space-between, flex-start)
+
+        > .type
+            width: calc(50% - 20px)
+            > i
+                margin-right: $pixel-proportion / 2
+
+        > .type-text
+            margin-top: $pixel-proportion - 3
+            margin-bottom: $pixel-proportion * 2
+            margin-right: $pixel-proportion / 2
+            font-size: 12px
+            font-weight: 900
+            display: inline-block
+            width: calc(50% - 20px)
+            text-align: right
+            color: $color2
+
+    > .info-content
+        box-shadow: 3px 3px 3px transparentize($color2, .7)
+        width: 100%
+        display: inline-block
+        padding: $pixel-proportion
+        border-radius: 0 $pixel-proportion 0 $pixel-proportion
+        background-color: $color5
+        font-weight: 400
+        margin-top: $pixel-proportion + 2
+        font-size: 14px
+        +transition(.2s)
+        +border-box
+
+        > &--hidden
+            min-height: auto
+
+        > &--expanded
+            min-height: 200px
+
+
+=molecule-li-left-item
+    &::after
+        right: calc(50% - #{$pixel-proportion} * -1.6)
+
+    > .extra-content
+        order: 1
+        margin-left: 21px
+
+        > .type
+            > i
+                margin-right: $pixel-proportion / 2
+
+    > .info-content
+        box-shadow: 3px 3px 3px transparentize($color2, .7)
+        margin-right: 21px
+        border-radius: $pixel-proportion 0 $pixel-proportion 0
+
+
+=molecule-li-right-item
+    &::after
+        left: calc(50% - #{$pixel-proportion} * -1.6)
+
+    > .extra-content
+        order: 0
+        margin-right: 21px
+        direction: ltr
+        text-align: right
+
+        > .type
+            > i
+                margin-left: $pixel-proportion / 2
+
+    > .info-content
+        box-shadow: 3px 3px 3px transparentize($color2, .7)
+        margin-left: 21px
+        border-radius: 0 $pixel-proportion 0 $pixel-proportion
+
+
+=molecule-li-mixed-item
+    width: 100%
+    +flex(row, space-between, flex-start)
+
+    &::after
+        top: $pixel-proportion - 2px
+        border-top: $pixel-proportion solid $color5
+        border-right: $pixel-proportion solid rgba(255,0,0,0)
+        border-bottom: $pixel-proportion solid rgba(255,0,0,0)
+        border-left: $pixel-proportion solid rgba(255,0,0,0)
+
+    > .extra-content
+        min-width: calc(50% - 21px)
+        +border-box
+
+        > .type-text
+            font-size: 12px
+            font-weight: 900
+            display: inline-block
+            width: 100%
+            top: $pixel-proportion * -.4
+            margin-bottom: $pixel-proportion
+            position: relative
+            color: $color2
+
+    > .info-content
+        margin-top: $pixel-proportion - 2px
+        min-width: calc(50% - 21px)
+        padding: $pixel-proportion
+        white-space: initial
+        background-color: $color5
+        font-weight: 400
+        font-size: 14px
+        +transition(.2s)
+        +border-box
+
+        &--hidden
+            height: auto
+
+        &--expanded
+            height: 200px

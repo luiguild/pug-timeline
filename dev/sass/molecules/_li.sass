@@ -1,0 +1,33 @@
+=molecule-li
+    font-size: 12px
+    position: relative
+    display: inline-block
+    box-sizing: border-box
+    width: 100%
+    margin-top: $pixel-proportion
+    margin-bottom: $pixel-proportion
+    color: $color2
+
+    &::before
+        position: absolute
+        z-index: 9
+        padding: $pixel-proportion / 2
+        content: ''
+        transform: rotate(45deg)
+        color: rgba(255,0,0,0)
+        border: 2px solid $color2
+        background-color: $color2
+        right: calc(50% - #{$pixel-proportion} + 2px)
+        box-shadow: 3px 3px 3px transparentize($color2, .7)
+
+    &::after
+        position: absolute
+        z-index: 9
+        top: 0
+        content: ''
+
+    &:last-child
+        margin-bottom: $pixel-proportion * 8
+
+    .type
+        +atom-type

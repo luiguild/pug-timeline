@@ -1,0 +1,35 @@
+=atom-type
+    font-size: 12px
+    font-weight: 600
+    display: inline-block
+    text-align: left
+
+    > i
+        display: inline-block
+        width: 22px
+        min-width: 22px
+        height: 22px
+        min-height: 22px
+        font-size: 16px
+        margin-bottom: $pixel-proportion / 2
+        color: $color2
+        border: 2px dotted $color2
+        border-radius: 50%
+        background-color: $color5
+        box-shadow: 3px 3px 3px transparentize($color2, .7)
+
+        &::before
+            position: relative
+            +flex(row, center, center)
+            top: 3px
+
+        &:nth-child(1n+5)
+            display: none
+
+        &:nth-child(4)::before
+            font-size: 16px
+            font-weight: 900
+            content: "+"
+            color: $color1
+            left: 6px
+            top: 1px

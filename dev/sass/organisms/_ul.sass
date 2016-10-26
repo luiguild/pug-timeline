@@ -1,0 +1,35 @@
+=organism-ul
+    z-index: 1
+    position: relative
+    width: 100%
+    padding-left: 10%
+    padding-right: 10%
+    +border-box
+    margin-right: auto
+    margin-left: auto
+    +flex(column, flex-start, center)
+
+
+    > li
+        +molecule-li
+
+
+    > .center-item
+        +molecule-li-center-item
+
+
+    > .left-item
+        +molecule-li-left-item
+
+
+    > .right-item
+        +molecule-li-right-item
+
+
+    > .left-item,
+    .right-item
+        +molecule-li-mixed-item
+
+
+    > .time-line-group
+        +atom-time-line-group

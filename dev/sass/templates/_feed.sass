@@ -1,0 +1,36 @@
+=template-feed
+    height: auto
+    width: 100%
+    position: absolute
+    z-index: 3
+    background-image: linear-gradient(180deg, $color1 5%, darken($color1, 20%))
+
+    &::before
+        position: absolute
+        z-index: 1
+        top: 0
+        left: calc(50% - 2px)
+        height: 100%
+        content: ''
+        border-left-width: 3px
+        border-left-style: solid
+        border-left-color: $color2
+
+    &::after
+        content: ''
+        height: $pixel-proportion * 10
+        width: 100%
+        bottom: 0
+        left: 0
+        background-image: linear-gradient(360deg, darken($color1, 20%) 20%, darken(rgba(255,23,78,0), 20%))
+        position: absolute
+        z-index: 2
+
+    > #logo
+        +atom-logo
+
+    > #title
+        +atom-title
+
+    > ul
+        +organism-ul

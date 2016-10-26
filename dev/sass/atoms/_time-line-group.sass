@@ -1,0 +1,25 @@
+=atom-time-line-group
+    font-size: 12px
+    z-index: 9
+    width: auto
+    margin-top: $pixel-proportion * 3
+    margin-bottom: $pixel-proportion
+    padding-top: $pixel-proportion / 2
+    padding-right: $pixel-proportion
+    padding-bottom: $pixel-proportion / 2
+    padding-left: $pixel-proportion
+    opacity: 1
+    color: lighten($color2, 80%)
+    border-radius: 0 $pixel-proportion 0 $pixel-proportion
+    background-color: $color2
+    font-weight: 700
+    box-shadow: 3px 3px 3px transparentize($color2, .7)
+
+    &:first-of-type
+        margin-top: $pixel-proportion * 8
+
+    &::before
+        display: none
+
+    &::after
+        display: none
